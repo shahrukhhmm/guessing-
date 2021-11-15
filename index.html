@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Game</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            height: 100vh;
+            background-color: black;
+            color: rgb(0, 0, 0);
+        }
+        
+        header {
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        header h1 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 3rem;
+            color: #FFFFFF;
+            text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18f0ff, 0 0 30px #18f0ff, 0 0 40px #18f0ff, 0 0 55px #49FF18, 0 0 75px #18f0ff;
+        }
+        
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            min-width: 500px;
+            transform: translate(-50%, -50%);
+            border-radius: 10px;
+            display: grid;
+            justify-items: center;
+            padding: 40px 30px;
+            background: hsla(221, 45%, 73%, 1);
+            background: linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+            background: -moz-linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+            background: -webkit-linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9BAFD9", endColorstr="#103783", GradientType=1);
+        }
+        
+        h1 {
+            font-size: 20px;
+            max-width: 300px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        input[type=number] {
+            margin-top: 30px;
+            width: 100px;
+            height: 50px;
+            font-size: 40px;
+            color: #FFE100;
+            background-color: transparent;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+         ::placeholder {
+            color: black;
+        }
+        
+        button {
+            padding: 5px 2px;
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: rgb(9, 3, 97);
+            border-radius: 5px;
+            color: white;
+            outline: 2px solid white;
+        }
+        
+        button:hover {
+            background-color: black;
+            outline: 2px solid rgb(9, 3, 97);
+        }
+        
+        p {
+            margin-top: 25px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Guess Game</h1>
+    </header>
+    <div class="container">
+        <h1>
+            Number is between the 1 to 10 guess the number.
+        </h1>
+        <input type="number" placeholder="0" id="guess">
+        <button onclick="dbao()" id="btn">Guess</button>
+        <p id="msg1">No of guesses : 0</p>
+        <p id="msg2">Number of gusses :none </p>
+        <p id="msg3"></p>
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>
+        let msg1 = document.getElementById('msg1');
+        let msg2 = document.getElementById('msg2');
+        let msg3 = document.getElementById('msg3')
+
+        let answer = Math.floor(Math.random() * 10) + 1;
+        let numofguess = 0;
+        let inputs = []
+
+        function dbao() {
+            let userguess = document.getElementById('guess').value;
+
+            if (userguess < 1 || userguess > 10 || userguess == 'undefined') {
+                msg3.textContent = "Please enter the valid input"
+            } else {
+                inputs.push(userguess);
+                numofguess += 1;
+                if (userguess < answer) {
+                    msg1.textContent = "Your guess is too small"
+                    msg2.textContent = "Number of guesses are :" + numofguess;
+                    msg3.textContent = "Your guesses are :" + inputs;
+                } else if (userguess > answer) {
+                    msg1.textContent = "Your guess is too large"
+                    msg2.textContent = "Number of guesses are :" + numofguess;
+                    msg3.textContent = "Your guesses are" + inputs;
+                } else if (userguess == answer) {
+                    msg1.textContent = " you won";
+                    msg2.textContent = "Yours guesses are : " + numofguess;
+                    msg3.textContent = "Your inputs are : " + inputs;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

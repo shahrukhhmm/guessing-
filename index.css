@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: black;
+    color: rgb(0, 0, 0);
+}
+
+header {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: 3rem;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #18f0ff, 0 0 30px #18f0ff, 0 0 40px #18f0ff, 0 0 55px #49FF18, 0 0 75px #18f0ff;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    min-width: 500px;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    display: grid;
+    justify-items: center;
+    padding: 40px 30px;
+    background: hsla(221, 45%, 73%, 1);
+    background: linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+    background: -moz-linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+    background: -webkit-linear-gradient(180deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9BAFD9", endColorstr="#103783", GradientType=1);
+}
+
+h1 {
+    font-size: 20px;
+    max-width: 300px;
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type=number] {
+    margin-top: 30px;
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    color: #FFE100;
+    background-color: transparent;
+    text-align: center;
+    font-weight: bold;
+}
+
+::placeholder {
+    color: black;
+}
+
+button {
+    padding: 5px 2px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: rgb(9, 3, 97);
+    border-radius: 5px;
+    color: white;
+    outline: 2px solid white;
+}
+
+button:hover {
+    background-color: black;
+    outline: 2px solid rgb(9, 3, 97);
+}
+
+p {
+    margin-top: 25px;
+    font-weight: bold;
+}
